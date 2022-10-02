@@ -1,7 +1,7 @@
-import { Component } from "solid-js";
-import Hamburger from "./icons/Hamburger";
-import ThemeSwitcher from "./icons/ThemeSwitcher";
-import Watch from "./Watch";
+import type { Component } from 'solid-js'
+import Hamburger from './icons/Hamburger'
+import ThemeSwitcher from './icons/ThemeSwitcher'
+import Watch from './Watch'
 
 const Nav: Component = () => {
   return (
@@ -27,7 +27,7 @@ const Nav: Component = () => {
         <Watch />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Nav;
+export default Nav

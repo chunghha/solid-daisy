@@ -1,5 +1,5 @@
-import { Component } from "solid-js"
-import { toggleTheme } from "../../stores/theme.store";
+import type { Component } from 'solid-js'
+import { toggleTheme } from '../../stores/theme.store'
 
 const ThemeSwitcher: Component = () => {
   return (
@@ -13,4 +13,4 @@ const ThemeSwitcher: Component = () => {
   )
 }
 
-export default ThemeSwitcher;
+export default ThemeSwitcher

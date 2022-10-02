@@ -1,7 +1,7 @@
-import { createStore } from "solid-js/store";
-import { Count } from "../models/count";
+import { createStore } from 'solid-js/store'
+import type { Count } from '../models/count'
 
-export const [counter, setCounter] = createStore<Count>({ count: 0 });
+export const [counter, setCounter] = createStore<Count>({ count: 0 })
 
 export const decreaseCounter = (c: Count) => {
   setCounter(

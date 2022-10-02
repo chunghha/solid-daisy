@@ -1,4 +1,4 @@
-import { Component } from "solid-js"
+import type { Component } from 'solid-js'
 
 const Hamburger: Component = () => {
   return (
@@ -20,4 +20,4 @@ const Hamburger: Component = () => {
   )
 }
 
-export default Hamburger;
+export default Hamburger

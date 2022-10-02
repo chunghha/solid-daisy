@@ -1,11 +1,11 @@
-import { Route, Routes } from '@solidjs/router';
-import type { Component } from 'solid-js';
+import { Route, Routes } from '@solidjs/router'
+import type { Component } from 'solid-js'
 
-import Nav from './components/Nav';
-import About from './pages/About';
-import Countries from './pages/Countries';
-import Home from './pages/Home';
-import { theme } from './stores/theme.store';
+import Nav from './components/Nav'
+import About from './pages/About'
+import Countries from './pages/Countries'
+import Home from './pages/Home'
+import { theme } from './stores/theme.store'
 
 const App: Component = () => {
   return (
@@ -22,7 +22,7 @@ const App: Component = () => {
       </div>
     </div>
 
-  );
-};
+  )
+}
 
-export default App;
+export default App

@@ -24,6 +24,7 @@
     "solid-js": "^1.5.7"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^0.27.0",
     "@fontsource/fira-mono": "^4.5.9",
     "@fontsource/inter": "^4.5.12",
     "@fontsource/poppins": "^4.5.9",

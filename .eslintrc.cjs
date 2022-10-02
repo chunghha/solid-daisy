@@ -1,12 +1,7 @@
 module.exports = {
 	root: true,
 	parser: '@typescript-eslint/parser',
-	extends: [
-		'eslint:recommended',
-		'plugin:solid/typescript',
-		'plugin:@typescript-eslint/recommended',
-		'prettier'
-	],
+	extends: '@antfu',
 	plugins: ['solid', '@typescript-eslint'],
 	ignorePatterns: ['*.cjs'],
 	parserOptions: {

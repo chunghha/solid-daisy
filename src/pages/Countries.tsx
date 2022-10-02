@@ -1,16 +1,17 @@
-import { Component, createResource, For } from "solid-js"
-import { Country } from "../models/country";
+import type { Component } from 'solid-js'
+import { For, createResource } from 'solid-js'
+import type { Country } from '../models/country'
 
-const fetchCountries = async () => (await fetch(`https://restcountries.com/v3.1/all`)).json();
+const fetchCountries = async () => (await fetch('https://restcountries.com/v3.1/all')).json()
 
 const Countries: Component = () => {
-  const [countries] = createResource<Country[]>(fetchCountries);
+  const [countries] = createResource<Country[]>(fetchCountries)
 
   return (
     <div>
-      <span>{countries.loading && "Loading..."}</span>
+      <span>{countries.loading && 'Loading...'}</span>
       <div class="grid grid-cols-1 gap-4 py-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        <For each={countries()}>{(country) =>
+        <For each={countries()}>{country =>
           <div
             class="w-84 card card-compact bg-base-100 shadow-xl transition duration-300 ease-in-out hover:scale-105 hover:shadow-lg"
           >
@@ -36,4 +37,4 @@ const Countries: Component = () => {
   )
 }
 
-export default Countries;
+export default Countries

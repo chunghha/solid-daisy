@@ -1,5 +1,5 @@
-import { Component } from "solid-js"
-import Hero from "../components/Hero"
+import type { Component } from 'solid-js'
+import Hero from '../components/Hero'
 
 const Home: Component = () => {
   return (
@@ -7,4 +7,4 @@ const Home: Component = () => {
   )
 }
 
-export default Home;
+export default Home

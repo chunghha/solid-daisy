@@ -1,5 +1,5 @@
-import { Component } from "solid-js"
-import Breakpoint from "../components/Breakpoint";
+import type { Component } from 'solid-js'
+import Breakpoint from '../components/Breakpoint'
 
 const About: Component = () => {
   return (
@@ -12,4 +12,4 @@ const About: Component = () => {
   )
 }
 
-export default About;
+export default About

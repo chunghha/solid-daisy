@@ -1,8 +1,8 @@
-import { Component } from "solid-js";
-import { counter, decreaseCounter, increaseCounter } from "../stores/counter.store";
+import type { Component } from 'solid-js'
+import { counter, decreaseCounter, increaseCounter } from '../stores/counter.store'
 
 const Counter: Component = () => {
-  const c = counter;
+  const c = counter
 
   return (
     <div class="m-2 text-center font-poppins text-neutral-content">
@@ -11,6 +11,6 @@ const Counter: Component = () => {
       <button class="btn btn-circle btn-sm ml-2 text-accent" onClick={() => increaseCounter(c)}>+</button>
     </div>
   )
-};
+}
 
-export default Counter;
+export default Counter

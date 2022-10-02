@@ -1,10 +1,10 @@
 export interface Country {
   name: {
-    official: string;
-  };
-  capital: string;
-  population: number;
+    official: string
+  }
+  capital: string
+  population: number
   flags: {
-    svg: string;
+    svg: string
   }
 }

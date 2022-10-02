@@ -1,9 +1,9 @@
-import { Component } from "solid-js";
-import Counter from "./Counter";
+import type { Component } from 'solid-js'
+import Counter from './Counter'
 
 const Hero: Component = () => {
   return (
-    <div class="hero min-h-screen" style={{ "background-image": "url(https://api.lorem.space/image/shoes?w=1000&h=800)" }}>
+    <div class="hero min-h-screen" style={{ 'background-image': 'url(https://api.lorem.space/image/shoes?w=1000&h=800)' }}>
       <div class="bg-opacity-45 hero-overlay" />
       <div class="hero-content text-center text-neutral-content">
         <div class="max-w-md">
@@ -22,7 +22,7 @@ const Hero: Component = () => {
       </div>
 
     </div>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero

@@ -20,14 +20,15 @@
   "dependencies": {
     "@solid-primitives/media": "^2.0.2",
     "@solidjs/router": "^0.4.3",
+    "@tanstack/solid-query": "^4.9.0",
     "luxon": "^3.0.4",
     "solid-js": "^1.5.7"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.27.0",
-    "@fontsource/fira-mono": "^4.5.9",
-    "@fontsource/inter": "^4.5.12",
-    "@fontsource/poppins": "^4.5.9",
+    "@fontsource/fira-mono": "^4.5.10",
+    "@fontsource/inter": "^4.5.13",
+    "@fontsource/poppins": "^4.5.10",
     "@tailwindcss/typography": "^0.5.7",
     "@types/luxon": "^3.0.1",
     "@typescript-eslint/eslint-plugin": "~5.38.1",

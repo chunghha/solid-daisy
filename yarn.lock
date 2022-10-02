@@ -363,20 +363,20 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@fontsource/fira-mono@^4.5.9":
-  version "4.5.9"
-  resolved "https://registry.yarnpkg.com/@fontsource/fira-mono/-/fira-mono-4.5.9.tgz#8ea6473e332ca3ed849d746f5302d7b1daebd210"
-  integrity sha512-DDhkRUjPHwPK/wB7GM/7LzGkcEC5JyTZM93YnFoP2Qfjffq3qX1asnXNqfglgZxXHXVmu3RI8OjRf87I97XCfA==
+"@fontsource/fira-mono@^4.5.10":
+  version "4.5.10"
+  resolved "https://registry.yarnpkg.com/@fontsource/fira-mono/-/fira-mono-4.5.10.tgz#443be4b2b4fc6e685b88431fcfdaf8d5f5639bbf"
+  integrity sha512-bxUnRP8xptGRo8YXeY073DSpfK74XpSb0ZyRNpHV9WvLnJ7TwPOjZll8hTMin7zLC6iOp59pDZ8EQDj1gzgAQQ==
 
-"@fontsource/inter@^4.5.12":
-  version "4.5.12"
-  resolved "https://registry.yarnpkg.com/@fontsource/inter/-/inter-4.5.12.tgz#a6236379bf710658db048d7087ec588754962cb6"
-  integrity sha512-bGKk4/8tube/nCk8hav0ZDBVbzJzc7m0Vt4xF5p15IN4YImwGdtKG38Oq5bU8xHNS+VfvbFFCepgQNj7Pr/Lvg==
+"@fontsource/inter@^4.5.13":
+  version "4.5.13"
+  resolved "https://registry.yarnpkg.com/@fontsource/inter/-/inter-4.5.13.tgz#db4b0177992091816962c4a4a24b1e060cc750bf"
+  integrity sha512-nABtF6jNZZHrotLRiGBByhG7NKJGJHgMbX5W8v6C/7nSdyiWtMRfZX7AMIECDLYGUOEArZDeVO/SbkgwKLrLJw==
 
-"@fontsource/poppins@^4.5.9":
-  version "4.5.9"
-  resolved "https://registry.yarnpkg.com/@fontsource/poppins/-/poppins-4.5.9.tgz#e5c192aef005177c87e23c1b783415d1e9b4b7a8"
-  integrity sha512-PMHOYeUpdmdN1xk13aGvhvZZrv9Zt3ubx2PmDvnROHgefm0ixpFd3ogAi0fY/aWtlkUdvgt0mSkGGbtt5i4MsQ==
+"@fontsource/poppins@^4.5.10":
+  version "4.5.10"
+  resolved "https://registry.yarnpkg.com/@fontsource/poppins/-/poppins-4.5.10.tgz#44dbfeacb5d89efca5ad7ad6cc941b2ac1ee424b"
+  integrity sha512-oYZVHsnlwV3VWM1SE/m6SUxVh0QLk5+2wB+lBiXcI7N/0KVQWmV9YykaPqfJHBLvmdya+MAOnv+BQHeLU1vOOw==
 
 "@humanwhocodes/config-array@^0.10.5":
   version "0.10.7"
@@ -510,6 +510,18 @@
     lodash.isplainobject "^4.0.6"
     lodash.merge "^4.6.2"
     postcss-selector-parser "6.0.10"
+
+"@tanstack/query-core@4.9.0":
+  version "4.9.0"
+  resolved "https://registry.yarnpkg.com/@tanstack/query-core/-/query-core-4.9.0.tgz#ffc057b664f952bf3d4925fd924a12403646f6a2"
+  integrity sha512-Vl0jAWJR3A1md0PoPMoEd6+H1dlRB5NqXDBNF+MZEgjQsR0Nly2kJgJj0Zh6eRDndnn7VlspxTWoOpt+dwDdAA==
+
+"@tanstack/solid-query@^4.9.0":
+  version "4.9.0"
+  resolved "https://registry.yarnpkg.com/@tanstack/solid-query/-/solid-query-4.9.0.tgz#abc388e87870b85a1ff477d2c98ba55336ad3126"
+  integrity sha512-OBol/hh7mb5aDMUWxmEcAQ7hrOjZ3N3ytPIIyRNVD1wOZ2tJv4mlCajsCKD5i6WJBDLTOq7+AamGeS/3L3slPw==
+  dependencies:
+    "@tanstack/query-core" "4.9.0"
 
 "@tootallnate/once@2":
   version "2.0.0"

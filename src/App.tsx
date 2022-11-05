@@ -3,6 +3,7 @@ import type { Component } from 'solid-js'
 
 import Nav from './components/Nav'
 import About from './pages/About'
+import Ach from './pages/Ach'
 import Countries from './pages/Countries'
 import Home from './pages/Home'
 import { theme } from './stores/theme.store'
@@ -17,6 +18,7 @@ const App: Component = () => {
             <Route path="/" component={Home} />
             <Route path="/about" component={About} />
             <Route path="/country" component={Countries} />
+            <Route path="/ach" component={Ach} />
           </Routes>
         </div>
       </div>

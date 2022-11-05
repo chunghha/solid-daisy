@@ -8,7 +8,7 @@ module.exports = {
 			'fira-mono': ['fira-mono']
 		}
 	},
-	plugins: [require('@tailwindcss/typography'), require('daisyui')],
+	plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms'), require('daisyui')],
 	// daisyUI config (optional)
 	daisyui: {
 		themes: [

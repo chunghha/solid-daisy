@@ -20,7 +20,7 @@
   "dependencies": {
     "@solid-primitives/media": "^2.0.4",
     "@solidjs/router": "^0.5.0",
-    "@tanstack/solid-query": "^4.14.3",
+    "@tanstack/solid-query": "^4.14.5",
     "luxon": "^3.1.0",
     "solid-forms": "^0.4.6",
     "solid-js": "^1.6.1"
@@ -38,8 +38,8 @@
     "@vitest/coverage-c8": "^0.24.3",
     "autoprefixer": "^10.4.13",
     "c8": "^7.12.0",
-    "daisyui": "^2.38.0",
-    "eslint": "^8.26.0",
+    "daisyui": "^2.38.1",
+    "eslint": "^8.27.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-solid": "^0.8.0",
     "jsdom": "^20.0.2",
@@ -48,7 +48,7 @@
     "prettier-plugin-tailwindcss": "^0.1.13",
     "tailwindcss": "^3.2.2",
     "typescript": "^4.8.4",
-    "vite": "^3.2.2",
+    "vite": "^3.2.3",
     "vite-plugin-solid": "^2.4.0",
     "vitest": "^0.24.5"
   }

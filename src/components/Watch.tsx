@@ -11,7 +11,10 @@ const Watch: Component = () => {
 
   onCleanup(() => clearInterval(interval))
 
-  return <div class="font-fira-mono ml-2 mr-4 text-secondary">{watch().toFormat('HH mm')}</div>
+  return <div class="countdown font-fira-mono ml-2 mr-4 text-xl text-secondary">
+    <span class="mr-1" style={`--value:${watch().toFormat('HH')};`}></span>
+    <span class="mr-1" style={`--value:${watch().toFormat('mm')};`}></span>
+  </div>
 }
 
 export default Watch

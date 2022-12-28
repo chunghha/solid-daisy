@@ -22,7 +22,13 @@ module.exports = {
 					info: '#56949f',
 					success: '#907aa9',
 					warning: '#ea9d34',
-					error: '#eb6f92'
+					error: '#eb6f92',
+					'--rounded-box': '0.25rem',
+					'--rounded-btn': '0.125rem',
+					'--rounded-badge': '0.125rem',
+					'--animation-btn': '0',
+					'--animation-input': '0',
+					'--btn-focus-scale': '1'
 				}
 			},
 			{
@@ -35,7 +41,13 @@ module.exports = {
 					info: '#9ccfd8',
 					success: '#c4a7e7',
 					warning: '#f6c177',
-					error: '#b4637a'
+					error: '#b4637a',
+					'--rounded-box': '0.25rem',
+					'--rounded-btn': '0.125rem',
+					'--rounded-badge': '0.125rem',
+					'--animation-btn': '0',
+					'--animation-input': '0',
+					'--btn-focus-scale': '1'
 				}
 			}
 		]

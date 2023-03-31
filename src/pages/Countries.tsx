@@ -3,7 +3,9 @@ import type { Component } from 'solid-js'
 import { For } from 'solid-js'
 import type { Country } from '../models/country'
 
-const fetchCountries = async () => (await fetch('https://restcountries.com/v3.1/all')).json()
+async function fetchCountries() {
+  return (await fetch('https://restcountries.com/v3.1/all')).json()
+}
 
 const queryClient = new QueryClient()
 

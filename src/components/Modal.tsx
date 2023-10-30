@@ -106,34 +106,35 @@ const Modal: Component = () => {
                 <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z" />
               </svg>
             </span>
-            <p class="mt-2 mb-1 text-black text-md">Your data is secured. We are
+            <p class="mt-2 mb-1 text-black text-md">
+              Your data is secured. We are
               <a class="ml-1 link text-primary">PCI Compliant</a>
             </p>
           </div>
           <div class="bg-white p-4">
-          <TextInputGroup type="text" control={group.controls.accountNumber} placeholder="Account Number" callback={toggleAccountImageVisible} />
-          <div class="hidden" id="accountNumberImage">
-            <img src="https://placeimg.com/400/225/arch" alt="accountNumberImage" />
+            <TextInputGroup type="text" control={group.controls.accountNumber} placeholder="Account Number" callback={toggleAccountImageVisible} />
+            <div class="hidden" id="accountNumberImage">
+              <img src="https://placeimg.com/400/225/arch" alt="accountNumberImage" />
+            </div>
+            <TextInput type="text" control={group.controls.repeatedAccountNumber} placeholder="Repeat Account Number" />
+            <div class="text-secondary text-sm ml-2">{group.errors?.invalidAccount}</div>
+            <TextInputGroup type="text" control={group.controls.routingNumber} placeholder="Routing Number" callback={toggleRoutingImageVisible} />
+            <div class="hidden" id="routingNumberImage">
+              <img src="https://placeimg.com/400/225/arch" alt="routingNumberImage" />
+            </div>
+            <TextInput type="text" control={group.controls.nameOnAccount} placeholder="Name on Account" />
+            <div class="mx-2 my-4 grid grid-flow-col auto-cols-max justify-center">
+              <RadioInput type="radio" control={group.controls.accountType} value="Checking" name="form-radio-account-type" />
+              <span class="ml-8" />
+              <RadioInput type="radio" control={group.controls.accountType} value="Savings" name="form-radio-account-type" />
+            </div>
+            <div class="font-poppins modal-action w-full">
+              <button type="submit" class="btn btn-block text-lg bg-primary hover:bg-primary/[.8] text-white" disabled={!group.isValid} onClick={onFormSubmit}>SUBMIT</button>
+            </div>
+            <div class="font-poppins modal-action w-full">
+              <button class="btn btn-block btn-ghost hover:bg-neutral/[.8] text-lg text-accent" onClick={closeModalWindow}>CANCEL</button>
+            </div>
           </div>
-          <TextInput type="text" control={group.controls.repeatedAccountNumber} placeholder="Repeat Account Number" />
-          <div class="text-secondary text-sm ml-2">{group.errors?.invalidAccount}</div>
-          <TextInputGroup type="text" control={group.controls.routingNumber} placeholder="Routing Number" callback={toggleRoutingImageVisible} />
-          <div class="hidden" id="routingNumberImage">
-            <img src="https://placeimg.com/400/225/arch" alt="routingNumberImage" />
-          </div>
-          <TextInput type="text" control={group.controls.nameOnAccount} placeholder="Name on Account" />
-          <div class="mx-2 my-4 grid grid-flow-col auto-cols-max justify-center">
-            <RadioInput type="radio" control={group.controls.accountType} value="Checking" name="form-radio-account-type" />
-            <span class="ml-8" />
-            <RadioInput type="radio" control={group.controls.accountType} value="Savings" name="form-radio-account-type" />
-          </div>
-          <div class="font-poppins modal-action w-full">
-            <button type="submit" class="btn btn-block text-lg bg-primary hover:bg-primary/[.8] text-white" disabled={!group.isValid} onClick={onFormSubmit}>SUBMIT</button>
-          </div>
-          <div class="font-poppins modal-action w-full">
-            <button class="btn btn-block btn-ghost hover:bg-neutral/[.8] text-lg text-accent" onClick={closeModalWindow}>CANCEL</button>
-          </div>
-        </div>
         </div>
       </div>
     </div>

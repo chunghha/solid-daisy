@@ -7,7 +7,9 @@ const Counter: Component = () => {
   return (
     <div class="m-2 text-center font-poppins text-neutral-content">
       <button class="btn btn-circle btn-sm mr-2 text-accent" onClick={() => decreaseCounter(c)}>-</button>
-      Counter: {c.count}
+      Counter:
+      {' '}
+      {c.count}
       <button class="btn btn-circle btn-sm ml-2 text-accent" onClick={() => increaseCounter(c)}>+</button>
     </div>
   )

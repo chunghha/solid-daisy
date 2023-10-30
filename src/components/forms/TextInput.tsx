@@ -33,7 +33,11 @@ export const TextInput: Component<{
       />
 
       <Show when={props?.control?.isTouched && props.control.errors?.isMissing}>
-        <small class="text-secondary">{props.placeholder} required</small>
+        <small class="text-secondary">
+          {props.placeholder}
+          {' '}
+          required
+        </small>
       </Show>
     </div>
   )

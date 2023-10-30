@@ -1,4 +1,5 @@
 import { QueryClient, QueryClientProvider, createQuery } from '@tanstack/solid-query'
+import { SolidQueryDevtools } from '@tanstack/solid-query-devtools'
 import type { Component } from 'solid-js'
 import { For } from 'solid-js'
 import type { Country } from '../models/country'
@@ -10,13 +11,17 @@ async function fetchCountries() {
 const queryClient = new QueryClient()
 
 const CountryContainer: Component = () => {
-  const query = createQuery(() => ['countryAPI'], fetchCountries)
+  const query = createQuery(() => ({
+    queryKey: ['countryAPI'],
+    queryFn: async () => await fetchCountries(),
+  }))
 
   return (
     <div>
-        <span>{query.isLoading && 'Loading...'}</span>
-        <div class="grid grid-cols-1 gap-4 py-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          <For each={query.data}>{(country: Country) =>
+      <span>{query.isLoading && 'Loading...'}</span>
+      <div class="grid grid-cols-1 gap-4 py-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <For each={query.data}>
+          {(country: Country) => (
             <div
               class="w-84 card card-compact bg-base-100 shadow-xl transition duration-300 ease-in-out hover:scale-105 hover:shadow-lg"
             >
@@ -36,9 +41,10 @@ const CountryContainer: Component = () => {
                 </div>
               </div>
             </div>
-          }</For>
-        </div>
+          )}
+        </For>
       </div>
+    </div>
   )
 }
 
@@ -46,6 +52,7 @@ const Countries: Component = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <CountryContainer />
+      <SolidQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   )
 }

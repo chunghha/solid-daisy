@@ -6,8 +6,8 @@
   "editor.formatOnSave": true,
   // Auto fix - disable globally but enable for TS/TSX
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": false,
-    "source.organizeImports": false
+    "source.fixAll.eslint": "never",
+    "source.organizeImports": "never"
   },
   "[typescript]": {
     "editor.codeActionsOnSave": {
@@ -79,5 +79,11 @@
     "json",
     "jsonc",
     "yaml"
-  ]
+  ],
+  "[typescript][typescriptreact]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+      "source.organizeImports": "explicit"
+    }
+  }
 }

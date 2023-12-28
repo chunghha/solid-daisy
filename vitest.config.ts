@@ -7,11 +7,10 @@ import solid from 'vite-plugin-solid'
 export default defineConfig({
   test: {
     environment: 'jsdom',
-    transformMode: {
-      web: [/\.[jt]sx?$/],
-    },
-    deps: {
-      inline: [/solid-js/],
+    server: {
+      deps: {
+        inline: [/solid-js/],
+      },
     },
   },
   plugins: [solid()],

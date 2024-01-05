@@ -1,11 +1,11 @@
 {
   "name": "solid-daisy",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "license": "MIT",
   "engines": {
     "node": ">=18.19.0 <19.0.0",
-    "pnpm": ">=8.12.1 <9.0.0"
+    "pnpm": ">=8.13.1 <9.0.0"
   },
   "scripts": {
     "start": "vite",
@@ -21,12 +21,12 @@
   },
   "dependencies": {
     "@solid-primitives/media": "^2.2.5",
-    "@solidjs/router": "~0.9.1",
-    "@tanstack/solid-query": "^5.15.0",
-    "@tanstack/solid-query-devtools": "^5.15.0",
+    "@solidjs/router": "~0.10.6",
+    "@tanstack/solid-query": "^5.17.1",
+    "@tanstack/solid-query-devtools": "^5.17.1",
     "luxon": "^3.4.4",
     "solid-forms": "^0.4.8",
-    "solid-js": "^1.8.7"
+    "solid-js": "^1.8.8"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.1",
@@ -36,24 +36,24 @@
     "@solidjs/testing-library": "^0.8.5",
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.10",
-    "@types/luxon": "^3.3.7",
-    "@typescript-eslint/eslint-plugin": "^6.16.0",
-    "@typescript-eslint/parser": "^6.16.0",
-    "@vitest/coverage-v8": "^1.1.0",
+    "@types/luxon": "^3.3.8",
+    "@typescript-eslint/eslint-plugin": "^6.17.0",
+    "@typescript-eslint/parser": "^6.17.0",
+    "@vitest/coverage-v8": "^1.1.2",
     "autoprefixer": "^10.4.16",
-    "c8": "^8.0.1",
-    "daisyui": "^4.4.24",
+    "c8": "^9.0.0",
+    "daisyui": "^4.5.0",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-solid": "^0.13.0",
+    "eslint-plugin-solid": "^0.13.1",
     "jsdom": "^23.0.1",
-    "postcss": "^8.4.32",
+    "postcss": "^8.4.33",
     "prettier": "^3.1.1",
-    "prettier-plugin-tailwindcss": "^0.5.9",
+    "prettier-plugin-tailwindcss": "^0.5.10",
     "tailwindcss": "^3.4.0",
     "typescript": "~5.3.3",
     "vite": "~5.0.10",
     "vite-plugin-solid": "^2.8.0",
-    "vitest": "^1.1.0"
+    "vitest": "^1.1.2"
   }
 }

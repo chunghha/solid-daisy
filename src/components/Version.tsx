@@ -4,7 +4,7 @@ const Version: Component = () => {
   return (
     <div class="font-poppins text-primary">
       App Version:
-      { APP_VERSION }
+      {APP_VERSION}
     </div>
   )
 }

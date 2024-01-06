@@ -23,9 +23,15 @@ const Breakpoint: Component = () => {
 
   return (
     <div class="btn-group flex justify-center p-8">
-      <button classList={{ 'btn': true, 'btn-warning': sm() }}>sm</button>
-      <button classList={{ 'btn': true, 'btn-warning': lg() }}>lg</button>
-      <button classList={{ 'btn': true, 'btn-warning': xl() }}>xl</button>
+      <button type="button" classList={{ btn: true, 'btn-warning': sm() }}>
+        sm
+      </button>
+      <button type="button" classList={{ btn: true, 'btn-warning': lg() }}>
+        lg
+      </button>
+      <button type="button" classList={{ btn: true, 'btn-warning': xl() }}>
+        xl
+      </button>
     </div>
   )
 }

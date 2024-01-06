@@ -9,7 +9,6 @@ import App from './App'
 import Nav from './components/Nav'
 import './index.css'
 import About from './pages/About'
-import Ach from './pages/Ach'
 import Countries from './pages/Countries'
 import { theme } from './stores/theme.store'
 
@@ -23,7 +22,6 @@ render(
             <Route path="/" component={App} />
             <Route path="/about" component={About} />
             <Route path="/country" component={Countries} />
-            <Route path="/ach" component={Ach} />
           </Router>
         </div>
       </div>

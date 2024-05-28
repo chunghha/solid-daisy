@@ -9,7 +9,7 @@ const Watch: Component = () => {
   onCleanup(() => clearInterval(interval))
 
   return (
-    <div class="countdown font-fira-mono ml-2 mr-4 text-xl text-secondary">
+    <div class="countdown mr-4 ml-2 font-fira-mono text-secondary text-xl">
       <span class="mr-1" style={`--value:${watch().toFormat('HH')};`} />
       <span class="mr-1" style={`--value:${watch().toFormat('mm')};`} />
     </div>

@@ -16,7 +16,7 @@ render(
   () => (
     <div data-theme={theme.isDark ? 'rosepine' : 'dawn'}>
       <div class="bg-gradient-to-r from-base-100 to-neutral">
-        <div class="max-w-8xl mx-auto pt-4 pr-8 pb-8 pl-8">
+        <div class="mx-auto max-w-8xl pt-4 pr-8 pb-8 pl-8">
           <Nav />
           <Router>
             <Route path="/" component={App} />

@@ -7,10 +7,10 @@ const Hero: Component = () => {
       class="hero min-h-screen"
       style={{ 'background-image': 'url(https://api.lorem.space/image/shoes?w=1000&h=800)' }}
     >
-      <div class="bg-opacity-45 hero-overlay" />
+      <div class="hero-overlay bg-opacity-45" />
       <div class="hero-content text-center text-neutral-content">
         <div class="max-w-md">
-          <h1 class="mb-5 font-poppins text-5xl font-bold">Hello there</h1>
+          <h1 class="mb-5 font-bold font-poppins text-5xl">Hello there</h1>
           <p class="mb-5 font-inter">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex

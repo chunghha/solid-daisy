@@ -12,8 +12,8 @@ importers:
         specifier: ^2.2.9
         version: 2.2.9(solid-js@1.8.17)
       '@solidjs/router':
-        specifier: ~0.13.3
-        version: 0.13.3(solid-js@1.8.17)
+        specifier: ~0.13.4
+        version: 0.13.4(solid-js@1.8.17)
       '@tanstack/solid-query':
         specifier: ^5.40.0
         version: 5.40.0(solid-js@1.8.17)
@@ -29,6 +29,9 @@ importers:
       solid-js:
         specifier: ^1.8.17
         version: 1.8.17
+      solid-spinner:
+        specifier: ^0.2.0
+        version: 0.2.0(solid-js@1.8.17)
     devDependencies:
       '@biomejs/biome':
         specifier: ^1.7.3
@@ -44,7 +47,7 @@ importers:
         version: 5.0.14
       '@solidjs/testing-library':
         specifier: ^0.8.8
-        version: 0.8.8(@solidjs/router@0.13.3(solid-js@1.8.17))(solid-js@1.8.17)
+        version: 0.8.8(@solidjs/router@0.13.4(solid-js@1.8.17))(solid-js@1.8.17)
       '@tailwindcss/forms':
         specifier: ^0.5.7
         version: 0.5.7(tailwindcss@3.4.3)
@@ -595,8 +598,8 @@ packages:
     peerDependencies:
       solid-js: ^1.6.12
 
-  '@solidjs/router@0.13.3':
-    resolution: {integrity: sha512-p8zznlvnN3KySMXqT8irhubgDNTETNa/guaGHU/cZl7kuiPO3PmkWNYfoNCygtEpoxLmLpf62/ZKeyhFdZexsw==}
+  '@solidjs/router@0.13.4':
+    resolution: {integrity: sha512-UvL/8TkP3ExE/Z5KDs0wdqesWasISsRTrrredcTbxQx/eNdRXr8BXFsa3GV2f6VSQVjbukWG5cRAcIzV76nl/g==}
     peerDependencies:
       solid-js: ^1.8.6
 
@@ -873,8 +876,8 @@ packages:
     resolution: {integrity: sha512-QOSvevhslijgYwRx6Rv7zKdMF8lbRmx+uQGx2+vDc+KI/eBnsy9kit5aj23AgGu3pa4t9AgwbnXWqS+iOY+2aA==}
     engines: {node: '>= 6'}
 
-  caniuse-lite@1.0.30001624:
-    resolution: {integrity: sha512-0dWnQG87UevOCPYaOR49CBcLBwoZLpws+k6W37nLjWUhumP1Isusj0p2u+3KhjNloRWK9OKMgjBBzPujQHw4nA==}
+  caniuse-lite@1.0.30001625:
+    resolution: {integrity: sha512-4KE9N2gcRH+HQhpeiRZXd+1niLB/XNLAhSy4z7fI8EzcbcPoAqjNInxVHTiTwWfTIV4w096XG8OtCOCQQKPv3w==}
 
   chai@4.4.1:
     resolution: {integrity: sha512-13sOfMv2+DWduEU+/xbun3LScLoqN17nBeTLUsmDfKdoiC1fr0n9PU4guu4AhRcOVFk/sW8LyZWHuhWtQZiF+g==}
@@ -1011,8 +1014,8 @@ packages:
   eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
 
-  electron-to-chromium@1.4.783:
-    resolution: {integrity: sha512-bT0jEz/Xz1fahQpbZ1D7LgmPYZ3iHVY39NcWWro1+hA2IvjiPeaXtfSqrQ+nXjApMvQRE2ASt1itSLRrebHMRQ==}
+  electron-to-chromium@1.4.787:
+    resolution: {integrity: sha512-d0EFmtLPjctczO3LogReyM2pbBiiZbnsKnGF+cdZhsYzHm/A0GV7W94kqzLD8SN4O3f3iHlgLUChqghgyznvCQ==}
 
   emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -1759,6 +1762,12 @@ packages:
     peerDependencies:
       solid-js: ^1.3
 
+  solid-spinner@0.2.0:
+    resolution: {integrity: sha512-xLTYFljnvtp8evg9H1Cs4UlIwFelO9HYmRF/bfByhlrcilHJwyQgSus9ICbu8Gt/CUubpT4LsADWxJ9rYg8VHA==}
+    engines: {node: '>=16'}
+    peerDependencies:
+      solid-js: '*'
+
   source-map-js@1.2.0:
     resolution: {integrity: sha512-itJW8lvSA0TXEphiRoawsCksnlf8SyvmFzIhltqAHluXd88pkCd+cXJVHTDwdCr0IzwptSm035IHQktUu1QUMg==}
     engines: {node: '>=0.10.0'}
@@ -2503,16 +2512,16 @@ snapshots:
     dependencies:
       solid-js: 1.8.17
 
-  '@solidjs/router@0.13.3(solid-js@1.8.17)':
+  '@solidjs/router@0.13.4(solid-js@1.8.17)':
     dependencies:
       solid-js: 1.8.17
 
-  '@solidjs/testing-library@0.8.8(@solidjs/router@0.13.3(solid-js@1.8.17))(solid-js@1.8.17)':
+  '@solidjs/testing-library@0.8.8(@solidjs/router@0.13.4(solid-js@1.8.17))(solid-js@1.8.17)':
     dependencies:
       '@testing-library/dom': 10.1.0
       solid-js: 1.8.17
     optionalDependencies:
-      '@solidjs/router': 0.13.3(solid-js@1.8.17)
+      '@solidjs/router': 0.13.4(solid-js@1.8.17)
 
   '@tailwindcss/forms@0.5.7(tailwindcss@3.4.3)':
     dependencies:
@@ -2774,7 +2783,7 @@ snapshots:
   autoprefixer@10.4.19(postcss@8.4.38):
     dependencies:
       browserslist: 4.23.0
-      caniuse-lite: 1.0.30001624
+      caniuse-lite: 1.0.30001625
       fraction.js: 4.3.7
       normalize-range: 0.1.2
       picocolors: 1.0.1
@@ -2814,8 +2823,8 @@ snapshots:
 
   browserslist@4.23.0:
     dependencies:
-      caniuse-lite: 1.0.30001624
-      electron-to-chromium: 1.4.783
+      caniuse-lite: 1.0.30001625
+      electron-to-chromium: 1.4.787
       node-releases: 2.0.14
       update-browserslist-db: 1.0.16(browserslist@4.23.0)
 
@@ -2839,7 +2848,7 @@ snapshots:
 
   camelcase-css@2.0.1: {}
 
-  caniuse-lite@1.0.30001624: {}
+  caniuse-lite@1.0.30001625: {}
 
   chai@4.4.1:
     dependencies:
@@ -2977,7 +2986,7 @@ snapshots:
 
   eastasianwidth@0.2.0: {}
 
-  electron-to-chromium@1.4.783: {}
+  electron-to-chromium@1.4.787: {}
 
   emoji-regex@8.0.0: {}
 
@@ -3735,6 +3744,10 @@ snapshots:
       '@babel/generator': 7.24.6
       '@babel/helper-module-imports': 7.24.6
       '@babel/types': 7.24.6
+      solid-js: 1.8.17
+
+  solid-spinner@0.2.0(solid-js@1.8.17):
+    dependencies:
       solid-js: 1.8.17
 
   source-map-js@1.2.0: {}

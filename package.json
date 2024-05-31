@@ -20,12 +20,13 @@
   },
   "dependencies": {
     "@solid-primitives/media": "^2.2.9",
-    "@solidjs/router": "~0.13.3",
+    "@solidjs/router": "~0.13.4",
     "@tanstack/solid-query": "^5.40.0",
     "@tanstack/solid-query-devtools": "^5.40.0",
     "luxon": "^3.4.4",
     "solid-forms": "^0.4.8",
-    "solid-js": "^1.8.17"
+    "solid-js": "^1.8.17",
+    "solid-spinner": "^0.2.0"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.7.3",

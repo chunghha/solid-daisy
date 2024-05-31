@@ -39,12 +39,12 @@ importers:
       '@fontsource/fira-mono':
         specifier: ^5.0.13
         version: 5.0.13
-      '@fontsource/inter':
+      '@fontsource/montagu-slab':
+        specifier: ^5.0.20
+        version: 5.0.20
+      '@fontsource/space-grotesk':
         specifier: ^5.0.18
         version: 5.0.18
-      '@fontsource/poppins':
-        specifier: ^5.0.14
-        version: 5.0.14
       '@solidjs/testing-library':
         specifier: ^0.8.8
         version: 0.8.8(@solidjs/router@0.13.4(solid-js@1.8.17))(solid-js@1.8.17)
@@ -427,11 +427,11 @@ packages:
   '@fontsource/fira-mono@5.0.13':
     resolution: {integrity: sha512-fZDjR2BdAqmauEbTjcIT62zYzbOgDa5+IQH34D2k8Pxmy1T815mAqQkZciWZVQ9dc/BgdTtTUV9HJ2ulBNwchg==}
 
-  '@fontsource/inter@5.0.18':
-    resolution: {integrity: sha512-YCsoYPTcs713sI7tLtxaPrIhXAXvEetGg5Ry02ivA8qUOb3fQHojbK/X9HLD5OOKvFUNR2Ynkwb1kR1hVKQHpw==}
+  '@fontsource/montagu-slab@5.0.20':
+    resolution: {integrity: sha512-KvXZnV/4gHAAxONlGVqcnunR53JklxeKpgVsf+pv2jDZu/csrYrlvpW7oZ4hnn/I9oW8MQcKZ68aqRRb2cm78A==}
 
-  '@fontsource/poppins@5.0.14':
-    resolution: {integrity: sha512-nmM1zpPo3Uh4JcGAVSQuWaZNYh2FbbwWhZ5t6hRaynmJaNTBW85d3nEh9zMmzI0HX7X5xqQVdRHeDatKpOGsnA==}
+  '@fontsource/space-grotesk@5.0.18':
+    resolution: {integrity: sha512-uhJ5pk8I2OS2VTsZNuzYTUOH3yX9nEx3moCOreA5MZKs77pWtchhdBezUO2o6TuBWnR7q3xw/3iMR+0kG+LZ5g==}
 
   '@humanwhocodes/config-array@0.11.14':
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
@@ -2372,9 +2372,9 @@ snapshots:
 
   '@fontsource/fira-mono@5.0.13': {}
 
-  '@fontsource/inter@5.0.18': {}
+  '@fontsource/montagu-slab@5.0.20': {}
 
-  '@fontsource/poppins@5.0.14': {}
+  '@fontsource/space-grotesk@5.0.18': {}
 
   '@humanwhocodes/config-array@0.11.14':
     dependencies:

@@ -11,7 +11,7 @@ const Nav: Component = () => {
           <Hamburger />
           <ul
             tabindex="0"
-            class="dropdown-content menu menu-compact mt-3 w-52 rounded-box bg-base-100 p-2 font-poppins shadow"
+            class="dropdown-content menu menu-compact mt-3 w-52 rounded-box bg-base-100 p-2 font-montagu-slab shadow"
           >
             <li>
               <a href="/">Homepage</a>
@@ -26,7 +26,7 @@ const Nav: Component = () => {
         </div>
       </div>
       <div class="navbar-center">
-        <p class="font-poppins text-primary text-xl">daisyUI</p>
+        <p class="font-montagu-slab text-primary text-xl">daisyUI</p>
       </div>
       <div class="navbar-end">
         <ThemeSwitcher />

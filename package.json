@@ -31,8 +31,8 @@
   "devDependencies": {
     "@biomejs/biome": "^1.7.3",
     "@fontsource/fira-mono": "^5.0.13",
-    "@fontsource/inter": "^5.0.18",
-    "@fontsource/poppins": "^5.0.14",
+    "@fontsource/montagu-slab": "^5.0.20",
+    "@fontsource/space-grotesk": "^5.0.18",
     "@solidjs/testing-library": "^0.8.8",
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.13",

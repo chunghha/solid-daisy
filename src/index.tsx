@@ -1,7 +1,7 @@
 /* @refresh reload */
 import '@fontsource/fira-mono/index.css'
-import '@fontsource/inter/index.css'
-import '@fontsource/poppins/index.css'
+import '@fontsource/space-grotesk/index.css'
+import '@fontsource/montagu-slab/index.css'
 import { Route, Router } from '@solidjs/router'
 import { render } from 'solid-js/web'
 

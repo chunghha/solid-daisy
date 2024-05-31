@@ -2,9 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+	margin: 0;
+	font-family: 'Space Grotesk' -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
 /* Add your global component styles here */
 .btn {
-	@apply font-inter;
+	@apply font-space-grotesk;
 	@apply font-semibold;
 	@apply rounded-full;
 	@apply uppercase;

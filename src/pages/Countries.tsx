@@ -37,11 +37,11 @@ const CountryContainer: Component = () => {
                   <img src={country.flags.svg} alt={country.name.official} />
                 </figure>
                 <div class="card-body">
-                  <h2 class="card-title font-poppins text-secondary">{country.name.official}</h2>
-                  <p class="font-inter text-warning text-xl">{country.capital?.[0] ?? ''}</p>
-                  <p class="font-inter text-info text-lg">{country.population.toLocaleString()}</p>
+                  <h2 class="card-title font-montagu-slab text-secondary">{country.name.official}</h2>
+                  <p class="font-space-grotesk text-warning text-xl">{country.capital?.[0] ?? ''}</p>
+                  <p class="font-space-grotesk text-info text-lg">{country.population.toLocaleString()}</p>
                   <div class="card-actions justify-end">
-                    <button type="button" class="btn-neutral btn font-poppins">
+                    <button type="button" class="btn-neutral btn font-montagu-slab">
                       Details
                     </button>
                   </div>

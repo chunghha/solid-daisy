@@ -29,10 +29,10 @@ const CountryContainer: Component = () => {
         <div class="text-error">{`${query.status}: ${query.error}`}</div>
       </Match>
       <Match when={query.isSuccess}>
-        <div class="grid grid-cols-1 gap-4 py-4 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
+        <div class="grid grid-cols-1 gap-4 py-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           <For each={query.data}>
             {(country: Country) => (
-              <div class="card card-compact w-84 bg-base-100 shadow-xl transition duration-300 ease-in-out hover:scale-105 hover:shadow-lg">
+              <div class="card card-compact w-84 bg-base-200 shadow-xl transition duration-300 ease-in-out hover:scale-105 hover:shadow-lg">
                 <figure>
                   <img src={country.flags.svg} alt={country.name.official} />
                 </figure>
@@ -41,7 +41,7 @@ const CountryContainer: Component = () => {
                   <p class="font-space-grotesk text-warning text-xl">{country.capital?.[0] ?? ''}</p>
                   <p class="font-space-grotesk text-info text-lg">{country.population.toLocaleString()}</p>
                   <div class="card-actions justify-end">
-                    <button type="button" class="btn-neutral btn font-montagu-slab">
+                    <button type="button" class="btn btn-secondary font-montagu-slab">
                       Details
                     </button>
                   </div>

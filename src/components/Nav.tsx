@@ -5,7 +5,7 @@ import ThemeSwitcher from './icons/ThemeSwitcher'
 
 const Nav: Component = () => {
   return (
-    <div class="navbar mb-4 bg-neutral shadow-lg">
+    <div class="navbar mb-4 bg-base-200 shadow-lg">
       <div class="navbar-start">
         <div class="dropdown z-[1000]">
           <Hamburger />

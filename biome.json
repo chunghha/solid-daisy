@@ -3,6 +3,9 @@
   "organizeImports": {
     "enabled": true
   },
+  "files": {
+    "ignore": ["**/index.css"]
+  },
   "formatter": {
     "enabled": true,
     "indentStyle": "space",

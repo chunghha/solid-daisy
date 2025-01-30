@@ -14,8 +14,8 @@ import { theme } from './stores/theme.store'
 
 render(
   () => (
-    <div data-theme={theme.isDark ? 'rosepine' : 'dawn'}>
-      <div class="bg-gradient-to-r from-base-100 to-neutral">
+    <div data-theme={theme.isDark ? 'dark' : 'light'}>
+      <div class="bg-linear-45 from-base-200 via-nuetral to-base-100">
         <div class="mx-auto max-w-8xl pt-4 pr-8 pb-8 pl-8">
           <Nav />
           <Router>

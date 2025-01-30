@@ -3,12 +3,8 @@ import Counter from './Counter'
 
 const Hero: Component = () => {
   return (
-    <div
-      class="hero min-h-screen"
-      style={{ 'background-image': 'url(https://api.lorem.space/image/shoes?w=1000&h=800)' }}
-    >
-      <div class="hero-overlay bg-opacity-45" />
-      <div class="hero-content text-center text-neutral-content">
+    <div class="hero min-h-screen bg-base-100">
+      <div classNae="hero-content text-neutral-content text-center">
         <div class="max-w-md">
           <h1 class="mb-5 font-bold font-montagu-slab text-5xl">Hello there</h1>
           <p class="mb-5 font-space-grotesk">

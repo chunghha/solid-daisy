@@ -5,12 +5,20 @@ const Counter: Component = () => {
   const c = counter
 
   return (
-    <div class="m-2 text-center font-montagu-slab text-neutral-content">
-      <button type="button" class="btn btn-circle btn-sm mr-2 text-accent" onClick={() => decreaseCounter(c)}>
+    <div class="m-2 text-center font-montagu-slab text-primaryy-content">
+      <button
+        type="button"
+        class="btn btn-secondary btn-circle btn-sm mr-2 text-seconary"
+        onClick={() => decreaseCounter(c)}
+      >
         -
       </button>
       Counter: {c.count}
-      <button type="button" class="btn btn-circle btn-sm ml-2 text-accent" onClick={() => increaseCounter(c)}>
+      <button
+        type="button"
+        class="btn btn-secondary btn-circle btn-sm ml-2 text-seconary"
+        onClick={() => increaseCounter(c)}
+      >
         +
       </button>
     </div>

@@ -1,3 +1,4 @@
+import { Link } from '@tanstack/solid-router'
 import type { Component } from 'solid-js'
 import Watch from './Watch'
 import Hamburger from './icons/Hamburger'
@@ -14,13 +15,13 @@ const Nav: Component = () => {
             class="dropdown-content menu menu-compact mt-3 w-52 rounded-box bg-base-100 p-2 font-montagu-slab shadow"
           >
             <li>
-              <a href="/">Homepage</a>
+              <Link to="/">Homepage</Link>
             </li>
             <li>
-              <a href="/about">About</a>
+              <Link to="/about">About</Link>
             </li>
             <li>
-              <a href="/country">Country</a>
+              <Link to="/country">Country</Link>
             </li>
           </ul>
         </div>

@@ -6,7 +6,7 @@ import { SpinningCircles } from 'solid-spinner'
 import type { Country } from '../models/country'
 
 async function fetchCountries() {
-  return (await fetch('https://restcountries.com/v3.1/all')).json()
+  return (await fetch('https://restcountries.com/v3.1/all?fields=flags,name,capital,population')).json()
 }
 
 const queryClient = new QueryClient()
@@ -41,7 +41,7 @@ const CountryContainer: Component = () => {
                   <p class="font-space-grotesk text-warning text-xl">{country.capital?.[0] ?? ''}</p>
                   <p class="font-space-grotesk text-info text-lg">{country.population.toLocaleString()}</p>
                   <div class="card-actions justify-end">
-                    <button type="button" class="btn btn-secondary font-montagu-slab">
+                    <button type="button" class="btn btn-secondary w-32">
                       Details
                     </button>
                   </div>

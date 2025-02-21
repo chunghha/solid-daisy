@@ -1,15 +1,17 @@
 {
-  "compilerOptions": {
-    "target": "ESNext",
-    "jsx": "preserve",
-    "jsxImportSource": "solid-js",
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "types": ["vite/client"],
-    "strict": true,
-    "noEmit": true,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "isolatedModules": true
-  }
+	"compilerOptions": {
+		"target": "ESNext",
+		"jsx": "preserve",
+		"jsxImportSource": "solid-js",
+		"module": "ESNext",
+		"skipLibCheck": true,
+
+		"moduleResolution": "bundler",
+		"types": ["vite/client"],
+		"strict": true,
+		"noEmit": true,
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"isolatedModules": true
+	}
 }

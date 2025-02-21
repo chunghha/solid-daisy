@@ -1,31 +1,29 @@
 /* @refresh reload */
-import '@fontsource/fira-mono/index.css'
-import '@fontsource/space-grotesk/index.css'
-import '@fontsource/montagu-slab/index.css'
-import { Route, Router } from '@solidjs/router'
+import '@fontsource/fira-mono'
+import '@fontsource/space-grotesk'
+import '@fontsource/montagu-slab'
+
+import './index.css'
+
+import { RouterProvider, createRouter } from '@tanstack/solid-router'
 import { render } from 'solid-js/web'
 
-import App from './App'
-import Nav from './components/Nav'
-import './index.css'
-import About from './pages/About'
-import Countries from './pages/Countries'
-import { theme } from './stores/theme.store'
+// Import the generated route tree
+import { routeTree } from './routeTree.gen'
 
-render(
-  () => (
-    <div data-theme={theme.isDark ? 'dark' : 'light'}>
-      <div class="bg-linear-45 from-base-200 via-nuetral to-base-100">
-        <div class="mx-auto max-w-8xl pt-4 pr-8 pb-8 pl-8">
-          <Nav />
-          <Router>
-            <Route path="/" component={App} />
-            <Route path="/about" component={About} />
-            <Route path="/country" component={Countries} />
-          </Router>
-        </div>
-      </div>
-    </div>
-  ),
-  document.getElementById('root') as HTMLElement,
-)
+// Create a new router instance
+const router = createRouter({ routeTree })
+
+// Register the router instance for type safety
+declare module '@tanstack/solid-router' {
+  interface Register {
+    router: typeof router
+  }
+}
+
+// Render the app
+const rootElement = document.getElementById('root') as HTMLElement
+
+if (!!rootElement && !rootElement.innerHTML) {
+  render(() => <RouterProvider router={router} />, rootElement)
+}

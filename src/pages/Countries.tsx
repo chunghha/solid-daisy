@@ -41,7 +41,7 @@ const CountryContainer: Component = () => {
                   <p class="font-space-grotesk text-warning text-xl">{country.capital?.[0] ?? ''}</p>
                   <p class="font-space-grotesk text-info text-lg">{country.population.toLocaleString()}</p>
                   <div class="card-actions justify-end">
-                    <button type="button" class="btn btn-secondary font-montagu-slab">
+                    <button type="button" class="btn btn-secondary w-32">
                       Details
                     </button>
                   </div>

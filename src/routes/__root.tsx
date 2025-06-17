@@ -1,5 +1,4 @@
-import { Link, Outlet, createRootRoute } from '@tanstack/solid-router'
-import App from '../App'
+import { createRootRoute, Outlet } from '@tanstack/solid-router'
 import Nav from '../components/Nav'
 import { theme } from '../stores/theme.store'
 

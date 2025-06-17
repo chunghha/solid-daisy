@@ -1,7 +1,3 @@
 {
-  "recommendations": [
-    "aaron-bond.better-comments",
-    "biomejs.biome",
-    "vitest.explorer"
-  ]
+  "recommendations": ["aaron-bond.better-comments", "biomejs.biome", "vitest.explorer"]
 }

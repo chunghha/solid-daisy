@@ -1,4 +1,4 @@
-import { QueryClient, QueryClientProvider, createQuery } from '@tanstack/solid-query'
+import { createQuery, QueryClient, QueryClientProvider } from '@tanstack/solid-query'
 import { SolidQueryDevtools } from '@tanstack/solid-query-devtools'
 import type { Component } from 'solid-js'
 import { For, Match, Switch } from 'solid-js'

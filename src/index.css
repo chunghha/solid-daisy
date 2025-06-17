@@ -1,51 +1,63 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 @plugin "daisyui" {
   logs: false;
-	themes: light --default, dark --prefersdark;
+  themes:
+    light --default,
+    dark --prefersdark;
 }
 @plugin "daisyui/theme" {
-	name: 'light';
-	default: true;
-	--color-primary: '#d7827e';
-	--color-secondary: '#286983';
-	--color-accent: '#b4637a';
-	--color-neutral: '#f2e9e1';
-	--color-base-100: '#faf4ed';
-	--color-info: '#56949f';
-	--color-success: '#907aa9';
-	--color-warning: '#ea9d34';
-	--color-error: '#eb6f92';
+  name: "light";
+  default: true;
+  --color-primary: "#d7827e";
+  --color-secondary: "#286983";
+  --color-accent: "#b4637a";
+  --color-neutral: "#f2e9e1";
+  --color-base-100: "#faf4ed";
+  --color-info: "#56949f";
+  --color-success: "#907aa9";
+  --color-warning: "#ea9d34";
+  --color-error: "#eb6f92";
 }
 @plugin "daisyui/theme" {
-	name: 'dark';
-	--color-primary: '#ea9a97';
-	--color-secondary: '#3e8fb0';
-	--color-accent: '#eb6f92';
-	--color-neutral: '#393552';
-	--color-base-100: '#191724';
-	--color-info: '#9ccfd8';
-	--color-success: '#c4a7e7';
-	--color-warning: '#f6c177';
-	--color-error: '#b4637a';
+  name: "dark";
+  --color-primary: "#ea9a97";
+  --color-secondary: "#3e8fb0";
+  --color-accent: "#eb6f92";
+  --color-neutral: "#393552";
+  --color-base-100: "#191724";
+  --color-info: "#9ccfd8";
+  --color-success: "#c4a7e7";
+  --color-warning: "#f6c177";
+  --color-error: "#b4637a";
 }
 
 /* Add your global component styles here */
 @theme {
-	--font-sans: 'Space Grotesk', sans-serif;
-	--font-serif: 'Montagu Slab', serif;
-	--font-space-grotesk: 'Space Grotesk', sans-serif;
-	--font-montagu-slab: 'Montagu Slab', serif;
-	--btn: font-space-grotesk, font-semibold, rounded-full, uppercase;
+  --font-sans: "Space Grotesk", sans-serif;
+  --font-serif: "Montagu Slab", serif;
+  --font-space-grotesk: "Space Grotesk", sans-serif;
+  --font-montagu-slab: "Montagu Slab", serif;
+  --btn: font-space-grotesk, font-semibold, rounded-full, uppercase;
 }
 
 body {
-	margin: 0;
-	font-family: 'Space Grotesk' -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  font-family:
+    "Space Grotesk" -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
+    "Oxygen",
+    "Ubuntu",
+    "Cantarell",
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }

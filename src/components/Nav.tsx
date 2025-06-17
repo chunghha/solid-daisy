@@ -1,8 +1,8 @@
 import { Link } from '@tanstack/solid-router'
 import type { Component } from 'solid-js'
-import Watch from './Watch'
 import Hamburger from './icons/Hamburger'
 import ThemeSwitcher from './icons/ThemeSwitcher'
+import Watch from './Watch'
 
 const Nav: Component = () => {
   return (

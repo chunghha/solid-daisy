@@ -5,7 +5,7 @@ const Counter: Component = () => {
   const c = counter
 
   return (
-    <div class="m-2 text-center font-montagu-slab text-primaryy-content">
+    <div class="m-2 text-center font-montagu-slab text-accent">
       <button
         type="button"
         class="btn btn-secondary btn-circle btn-sm mr-2 text-seconary"

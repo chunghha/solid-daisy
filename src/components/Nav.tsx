@@ -6,7 +6,7 @@ import Watch from './Watch'
 
 const Nav: Component = () => {
   return (
-    <div class="navbar mb-4 bg-base-200 shadow-lg">
+    <div class="navbar mb-4 bg-gradient-to-r from-bg-base-100 via-info-content to-bg-base-200 shadow-md">
       <div class="navbar-start">
         <div class="dropdown z-[1000]">
           <Hamburger />
@@ -27,7 +27,7 @@ const Nav: Component = () => {
         </div>
       </div>
       <div class="navbar-center">
-        <p class="font-montagu-slab text-primary text-xl">daisyUI</p>
+        <p class="font-montagu-slab text-info text-xl">daisyUI</p>
       </div>
       <div class="navbar-end">
         <ThemeSwitcher />

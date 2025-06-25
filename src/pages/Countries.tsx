@@ -32,16 +32,16 @@ const CountryContainer: Component = () => {
         <div class="grid grid-cols-1 gap-4 py-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           <For each={query.data}>
             {(country: Country) => (
-              <div class="card card-compact w-84 bg-base-200 shadow-xl transition duration-300 ease-in-out hover:scale-105 hover:shadow-lg">
+              <div class="card card-compact w-84 bg-base-100 shadow-md transition duration-300 ease-in-out hover:scale-105 hover:shadow-lg">
                 <figure>
                   <img src={country.flags.svg} alt={country.name.official} />
                 </figure>
                 <div class="card-body">
                   <h2 class="card-title font-montagu-slab text-secondary">{country.name.official}</h2>
-                  <p class="font-space-grotesk text-warning text-xl">{country.capital?.[0] ?? ''}</p>
-                  <p class="font-space-grotesk text-info text-lg">{country.population.toLocaleString()}</p>
+                  <p class="font-space-grotesk text-info text-xl">{country.capital?.[0] ?? ''}</p>
+                  <p class="font-space-grotesk text-base-content text-lg">{country.population.toLocaleString()}</p>
                   <div class="card-actions justify-end">
-                    <button type="button" class="btn btn-secondary w-32">
+                    <button type="button" class="btn btn-primary w-32">
                       Details
                     </button>
                   </div>

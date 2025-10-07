@@ -6,14 +6,14 @@ describe('counter store', () => {
     resetCounter()
   })
 
-  it('decreases ...', () => {
+  it('shouldDecreaseCounter', () => {
     const c = counter
     expect(c.count).toBe(0)
     decreaseCounter(c)
     expect(c.count).toBe(-1)
   })
 
-  it('increases ...', () => {
+  it('shouldIncreaseCounter', () => {
     const c = counter
     expect(c.count).toBe(0)
     increaseCounter(c)

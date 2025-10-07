@@ -4,19 +4,13 @@ import type { Component } from 'solid-js'
 import { For, Match, Switch } from 'solid-js'
 import { SpinningCircles } from 'solid-spinner'
 import type { Country } from '../models/country'
+import { createCountryQueryOptions } from '../services/countryService'
 
-async function fetchCountries() {
-  return (await fetch('https://restcountries.com/v3.1/all?fields=flags,name,capital,population')).json()
-}
+// Default query client for production usage
+const defaultQueryClient = new QueryClient()
 
-const queryClient = new QueryClient()
-
-const CountryContainer: Component = () => {
-  const query = createQuery(() => ({
-    queryKey: ['countryAPI'],
-    queryFn: async () => await fetchCountries(),
-    retry: 1,
-  }))
+export const CountryContainer: Component = () => {
+  const query = createQuery(createCountryQueryOptions)
 
   return (
     <Switch>
@@ -55,11 +49,17 @@ const CountryContainer: Component = () => {
   )
 }
 
-const Countries: Component = () => {
+interface CountriesProps {
+  queryClient?: QueryClient
+}
+
+const Countries: Component<CountriesProps> = (props) => {
+  const queryClient = props.queryClient ?? defaultQueryClient
+
   return (
     <QueryClientProvider client={queryClient}>
       <CountryContainer />
-      <SolidQueryDevtools initialIsOpen={false} />
+      {!import.meta?.vitest && <SolidQueryDevtools initialIsOpen={false} />}
     </QueryClientProvider>
   )
 }

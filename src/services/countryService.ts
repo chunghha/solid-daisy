@@ -1,4 +1,3 @@
-import type { CreateQueryOptions } from '@tanstack/solid-query'
 import type { Country } from '../models/country'
 
 /**
@@ -13,9 +12,9 @@ export async function fetchCountries(): Promise<Country[]> {
   return response.json()
 }
 
-export function createCountryQueryOptions(): CreateQueryOptions<Country[], Error> {
+export function createCountryQueryOptions() {
   return {
-    queryKey: ['countryAPI'],
+    queryKey: ['countryAPI'] as const,
     queryFn: fetchCountries,
     retry: import.meta?.vitest ? 0 : 1,
   }

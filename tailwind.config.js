@@ -1,4 +1,7 @@
-module.exports = {
+import forms from '@tailwindcss/forms'
+import typography from '@tailwindcss/typography'
+
+export default {
   content: ['./src/**/*.{html,js,ts,tsx}'],
   theme: {
     extends: {},
@@ -8,5 +11,5 @@ module.exports = {
       'fira-mono': ['fira-mono'],
     },
   },
-  plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms')],
+  plugins: [typography, forms],
 }

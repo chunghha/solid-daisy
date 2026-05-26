@@ -1,11 +1,12 @@
 {
   "name": "solid-daisy",
   "version": "0.4.1",
+  "type": "module",
   "description": "",
   "license": "MIT",
   "engines": {
     "node": ">=24.14.1 <25.0.0",
-    "pnpm": ">=10.15.1 <11.0.0"
+    "pnpm": ">=11.0.8 <12.0.0"
   },
   "scripts": {
     "generate-routes": "tsr generate",
@@ -23,41 +24,41 @@
   },
   "dependencies": {
     "@solid-primitives/media": "^2.3.5",
-    "@tanstack/router-plugin": "^1.167.28",
-    "@tanstack/solid-query": "^5.100.6",
-    "@tanstack/solid-query-devtools": "^5.100.6",
-    "@tanstack/solid-router": "^1.168.25",
-    "@tanstack/solid-router-devtools": "^1.166.13",
-    "@tanstack/zod-adapter": "^1.166.9",
+    "@tanstack/router-plugin": "^1.168.11",
+    "@tanstack/solid-query": "^5.100.14",
+    "@tanstack/solid-query-devtools": "^5.100.14",
+    "@tanstack/solid-router": "^1.170.8",
+    "@tanstack/solid-router-devtools": "^1.167.0",
+    "@tanstack/zod-adapter": "^1.167.0",
     "luxon": "^3.7.2",
     "solid-forms": "^0.5.2",
-    "solid-js": "^1.9.12",
+    "solid-js": "^1.9.13",
     "solid-spinner": "^0.2.0",
-    "zod": "^4.3.6"
+    "zod": "^4.4.3"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.4.13",
+    "@biomejs/biome": "^2.4.15",
     "@fontsource/fira-mono": "^5.2.7",
     "@fontsource/montagu-slab": "^5.2.10",
     "@fontsource/space-grotesk": "^5.2.10",
     "@solidjs/testing-library": "^0.8.10",
     "@tailwindcss/forms": "^0.5.11",
-    "@tailwindcss/postcss": "^4.2.4",
+    "@tailwindcss/postcss": "^4.3.0",
     "@tailwindcss/typography": "^0.5.19",
-    "@tailwindcss/vite": "^4.2.4",
-    "@tanstack/router-cli": "^1.166.37",
+    "@tailwindcss/vite": "^4.3.0",
+    "@tanstack/router-cli": "^1.167.10",
     "@types/luxon": "^3.7.1",
-    "@types/node": "^24.12.2",
-    "@vitest/coverage-v8": "^4.1.5",
+    "@types/node": "^24.12.4",
+    "@vitest/coverage-v8": "^4.1.7",
     "autoprefixer": "^10.5.0",
     "c8": "^11.0.0",
-    "daisyui": "~5.5.19",
+    "daisyui": "~5.5.20",
     "happy-dom": "^20.9.0",
-    "postcss": "^8.5.12",
-    "tailwindcss": "^4.2.4",
+    "postcss": "^8.5.15",
+    "tailwindcss": "^4.3.0",
     "typescript": "~6.0.3",
-    "vite": "~8.0.10",
+    "vite": "~8.0.14",
     "vite-plugin-solid": "^2.11.12",
-    "vitest": "^4.1.5"
+    "vitest": "^4.1.7"
   }
 }

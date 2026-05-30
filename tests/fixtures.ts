@@ -13,12 +13,20 @@
  */
 export interface MockCountry {
   name: {
+    common?: string;
     official: string;
   };
   capital?: string[];
   population: number;
+  area?: number;
+  continents: string[];
+  region?: string;
+  subregion?: string;
+  cca3?: string;
+  languages?: Record<string, string>;
   flags: {
     svg: string;
+    alt?: string;
   };
 }
 
@@ -30,10 +38,16 @@ export interface MockCountry {
  */
 export function createMockCountry(overrides?: Partial<MockCountry>): MockCountry {
   const defaultCountry: MockCountry = {
-    name: { official: 'Republic of Test' },
+    name: { common: 'Test', official: 'Republic of Test' },
     capital: ['Testville'],
     population: 123_456,
-    flags: { svg: 'https://flag.test/test.svg' },
+    area: 1234,
+    continents: ['Europe'],
+    region: 'Europe',
+    subregion: 'Western Europe',
+    cca3: 'TST',
+    languages: { tst: 'Testish' },
+    flags: { svg: 'https://flag.test/test.svg', alt: 'Flag of Test' },
   };
 
   if (!overrides) return defaultCountry;
@@ -42,6 +56,12 @@ export function createMockCountry(overrides?: Partial<MockCountry>): MockCountry
     name: { ...(overrides.name ?? defaultCountry.name) },
     capital: overrides.capital ?? defaultCountry.capital,
     population: overrides.population ?? defaultCountry.population,
+    area: overrides.area ?? defaultCountry.area,
+    continents: overrides.continents ?? defaultCountry.continents,
+    region: overrides.region ?? defaultCountry.region,
+    subregion: overrides.subregion ?? defaultCountry.subregion,
+    cca3: overrides.cca3 ?? defaultCountry.cca3,
+    languages: overrides.languages ?? defaultCountry.languages,
     flags: { ...(overrides.flags ?? defaultCountry.flags) },
   };
 }
@@ -64,12 +84,14 @@ export const mockCountries: MockCountry[] = [
     name: { official: 'Republic of Test' },
     capital: ['Testville'],
     population: 123_456,
+    continents: ['Europe'],
     flags: { svg: 'https://flag.test/test.svg' },
   }),
   createMockCountry({
     name: { official: 'Test Nation' },
     capital: ['Test City'],
     population: 5_000_000,
+    continents: ['Asia'],
     flags: { svg: 'https://example.com/flag.svg' },
   }),
 ];

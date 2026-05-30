@@ -1,5 +1,6 @@
 import { render, screen, waitFor } from '@solidjs/testing-library'
 import { QueryClientProvider } from '@tanstack/solid-query'
+import { flush } from 'solid-js'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { createMockCountry, type MockCountry, mockCountries } from '../../tests/fixtures'
 import {
@@ -7,8 +8,10 @@ import {
   createTestQueryClient,
   stubFetchDeferred,
   stubFetchFailure,
+  stubFetchSequence,
   stubFetchSuccess,
 } from '../../tests/utils'
+import { click } from '../../tests/utils/solid-test'
 import { CountryContainer } from './Countries'
 
 /**
@@ -64,7 +67,10 @@ describe('Countries page', () => {
       name: { official: 'Test Nation' },
       capital: ['Test City'],
       population: 5_000_000,
-      flags: { svg: 'https://example.com/flag.svg' },
+      area: 250_000,
+      cca3: 'TST',
+      languages: { eng: 'English' },
+      flags: { svg: 'https://example.com/flag.svg', alt: 'A test flag' },
     })
 
     const fetchStub = stubFetchSuccess([testCountry])
@@ -83,7 +89,15 @@ describe('Countries page', () => {
     // Assert: Image has correct attributes (from fixture)
     const img = screen.getByRole('img')
     expect(img.getAttribute('src')).toBe(testCountry.flags.svg)
-    expect(img.getAttribute('alt')).toBe(testCountry.name.official)
+    expect(img.getAttribute('alt')).toBe(testCountry.flags.alt)
+
+    expect(screen.getByText('TST')).toBeTruthy()
+    expect(screen.getByText('20/km²')).toBeTruthy()
+    expect(screen.getByText('English')).toBeTruthy()
+    expect(screen.getByText('250,000 km²')).toBeTruthy()
+    expect(screen.getByRole('link', { name: /map/i }).getAttribute('href')).toBe(
+      'https://www.google.com/maps/search/?api=1&query=Test%20Nation',
+    )
 
     // Assert: Details button is present
     expect(screen.getByRole('button', { name: 'Details' })).toBeTruthy()
@@ -117,5 +131,86 @@ describe('Countries page', () => {
       },
       { timeout: 2000 },
     )
+  })
+
+  it('shouldShowErrorWhenFetchReturnsNonArrayData', async () => {
+    vi.stubGlobal('fetch', stubFetchSequence([{ message: 'Bad request' }, { message: 'Still bad' }]))
+
+    renderCountryContainerWithClient(createTestQueryClient())
+
+    await waitFor(
+      () => {
+        expect(screen.queryByText(/expected countries api to return an array/i)).toBeTruthy()
+      },
+      { timeout: 2500 },
+    )
+  })
+
+  it('shouldFallbackToBaseCountryFieldsWhenEnrichedFieldsAreRejected', async () => {
+    vi.stubGlobal('fetch', stubFetchSequence([{ message: 'Bad request' }, mockCountries]))
+
+    renderCountryContainerWithClient(createTestQueryClient())
+
+    expect(await screen.findByText(mockCountries[0].name.official)).toBeTruthy()
+  })
+
+  it('shouldFilterCountriesBySearchText', async () => {
+    const countries = [
+      createMockCountry({ name: { official: 'Republic of Argentina' }, capital: ['Buenos Aires'] }),
+      createMockCountry({ name: { official: 'United Mexican States' }, capital: ['Mexico City'] }),
+    ]
+
+    vi.stubGlobal('fetch', stubFetchSuccess(countries))
+
+    renderCountryContainerWithClient(createTestQueryClient())
+
+    expect(await screen.findByText('Republic of Argentina')).toBeTruthy()
+
+    const search = screen.getByRole('searchbox', { name: /search countries/i }) as HTMLInputElement
+    search.value = 'mexico'
+    search.dispatchEvent(new InputEvent('input', { bubbles: true, inputType: 'insertText', data: 'mexico' }))
+    flush()
+
+    expect(screen.queryByText('Republic of Argentina')).toBeNull()
+    expect(screen.getByText('United Mexican States')).toBeTruthy()
+  })
+
+  it('shouldFindCountryByCapitalSearch', async () => {
+    const countries = [
+      createMockCountry({ name: { official: 'Republic of Korea' }, capital: ['Seoul'], continents: ['Asia'] }),
+      createMockCountry({ name: { official: 'Japan' }, capital: ['Tokyo'], continents: ['Asia'] }),
+    ]
+
+    vi.stubGlobal('fetch', stubFetchSuccess(countries))
+
+    renderCountryContainerWithClient(createTestQueryClient())
+
+    expect(await screen.findByText('Republic of Korea')).toBeTruthy()
+
+    const search = screen.getByRole('searchbox', { name: /search countries/i }) as HTMLInputElement
+    search.value = 'seoul'
+    search.dispatchEvent(new InputEvent('input', { bubbles: true, inputType: 'insertText', data: 'seoul' }))
+    flush()
+
+    expect(screen.getByText('Republic of Korea')).toBeTruthy()
+    expect(screen.queryByText('Japan')).toBeNull()
+  })
+
+  it('shouldFilterCountriesByContinent', async () => {
+    const countries = [
+      createMockCountry({ name: { official: 'Republic of Argentina' }, continents: ['South America'] }),
+      createMockCountry({ name: { official: 'Republic of Guatemala' }, continents: ['North America'] }),
+    ]
+
+    vi.stubGlobal('fetch', stubFetchSuccess(countries))
+
+    renderCountryContainerWithClient(createTestQueryClient())
+
+    expect(await screen.findByText('Republic of Argentina')).toBeTruthy()
+
+    click(screen.getByRole('button', { name: 'South America' }))
+
+    expect(screen.getByText('Republic of Argentina')).toBeTruthy()
+    expect(screen.queryByText('Republic of Guatemala')).toBeNull()
   })
 })

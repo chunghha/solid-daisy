@@ -121,6 +121,19 @@ export function stubFetchFailure(error: unknown): (...args: unknown[]) => Promis
   }
 }
 
+export function stubFetchSequence(data: unknown[]): (...args: unknown[]) => Promise<ResponseLike> {
+  let index = 0
+
+  return async () => {
+    const value = data[Math.min(index, data.length - 1)]
+    index += 1
+
+    return {
+      json: async () => value,
+    }
+  }
+}
+
 /**
  * restoreGlobalFetch
  *

@@ -6,13 +6,16 @@ import Watch from './Watch'
 
 const Nav: Component = () => {
   return (
-    <div class="navbar mb-4 bg-gradient-to-r from-bg-base-100 via-info-content to-bg-base-200 shadow-md">
+    <nav
+      aria-label="Primary"
+      class="navbar sticky top-4 z-50 mb-4 border-2 border-base-content/10 bg-base-100/75 shadow-[8px_8px_0_rgba(15,8,75,0.16)] backdrop-blur-xl"
+    >
       <div class="navbar-start">
         <div class="dropdown z-[1000]">
           <Hamburger />
           <ul
             tabindex="0"
-            class="dropdown-content menu menu-compact mt-3 w-52 rounded-box bg-base-100 p-2 font-montagu-slab shadow"
+            class="dropdown-content menu menu-compact mt-3 w-52 rounded-none border-2 border-accent bg-base-100 p-2 font-montagu-slab shadow-[8px_8px_0_#0f084b]"
           >
             <li>
               <Link to="/">Homepage</Link>
@@ -27,13 +30,15 @@ const Nav: Component = () => {
         </div>
       </div>
       <div class="navbar-center">
-        <p class="font-montagu-slab text-info text-xl">daisyUI</p>
+        <p class="border-base-content/10 border-x-2 px-5 font-black font-montagu-slab text-accent text-xl tracking-[-0.03em]">
+          daisyUI
+        </p>
       </div>
-      <div class="navbar-end">
+      <div class="navbar-end gap-3 font-fira-mono text-info">
         <ThemeSwitcher />
         <Watch />
       </div>
-    </div>
+    </nav>
   )
 }
 

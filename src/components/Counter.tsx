@@ -5,18 +5,18 @@ const Counter: Component = () => {
   const c = counter
 
   return (
-    <div class="m-2 text-center font-montagu-slab text-accent">
+    <div class="flex items-center justify-center gap-3 text-center font-montagu-slab text-accent">
       <button
         type="button"
-        class="btn btn-secondary btn-circle btn-sm mr-2 text-seconary"
+        class="btn btn-secondary btn-circle btn-sm text-secondary-content shadow-[3px_3px_0_rgba(15,8,75,0.28)] transition-transform hover:-translate-y-0.5"
         onClick={() => decreaseCounter(c)}
       >
         -
       </button>
-      Counter: {c.count}
+      <span class="min-w-24 font-bold text-base-content">Counter: {c.count}</span>
       <button
         type="button"
-        class="btn btn-secondary btn-circle btn-sm ml-2 text-seconary"
+        class="btn btn-secondary btn-circle btn-sm text-secondary-content shadow-[3px_3px_0_rgba(15,8,75,0.28)] transition-transform hover:-translate-y-0.5"
         onClick={() => increaseCounter(c)}
       >
         +

@@ -88,7 +88,7 @@ export const CountryContainer: Component = () => {
             <For each={[1, 2, 3, 4, 5, 6]}>{() => <div class="h-8 w-28 shrink-0 rounded-full bg-base-300" />}</For>
           </div>
 
-          <div class="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
+          <div class="mt-6 grid auto-rows-fr grid-cols-1 items-stretch gap-5 sm:grid-cols-2 xl:grid-cols-4">
             <For each={[1, 2, 3, 4, 5, 6, 7, 8]}>
               {() => (
                 <article class="overflow-hidden border border-base-300 bg-base-100/75 shadow-base-content/10 shadow-md">
@@ -185,11 +185,11 @@ export const CountryContainer: Component = () => {
             </For>
           </div>
 
-          <div class="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
+          <div class="mt-6 grid auto-rows-fr grid-cols-1 items-stretch gap-5 sm:grid-cols-2 xl:grid-cols-4">
             <For each={filteredCountries()}>
               {(country: Country) => (
-                <article class="group overflow-hidden border border-base-300 bg-base-100 shadow-base-content/10 shadow-md transition duration-300 ease-out hover:-translate-y-1 hover:border-primary/60 hover:shadow-primary/20 hover:shadow-xl">
-                  <figure class="relative aspect-[1.65] overflow-hidden bg-base-200">
+                <article class="group flex h-full flex-col overflow-hidden border border-base-300 bg-base-100 shadow-base-content/10 shadow-md transition duration-300 ease-out hover:-translate-y-1 hover:border-primary/60 hover:shadow-primary/20 hover:shadow-xl">
+                  <figure class="relative aspect-[1.65] shrink-0 overflow-hidden bg-base-200">
                     <div class="absolute inset-0 bg-gradient-to-t from-base-content/20 via-transparent to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
                     <img
                       src={country.flags.svg}
@@ -197,7 +197,7 @@ export const CountryContainer: Component = () => {
                       class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                     />
                   </figure>
-                  <div class="flex min-h-72 flex-col justify-between p-5">
+                  <div class="flex min-h-0 flex-1 flex-col justify-between p-5">
                     <div>
                       <div class="flex items-start justify-between gap-3">
                         <p class="inline-flex rounded-full border border-base-300 bg-base-200/70 px-3 py-1 font-space-grotesk text-base-content/60 text-xs">
@@ -210,13 +210,17 @@ export const CountryContainer: Component = () => {
                         </Show>
                       </div>
 
-                      <div class="mt-4">
-                        <h2 class="font-montagu-slab text-secondary text-xl leading-tight">{country.name.official}</h2>
-                        <Show when={country.name.common && country.name.common !== country.name.official}>
-                          <p class="mt-1 text-base-content/50 text-sm">{country.name.common}</p>
-                        </Show>
+                      <div class="mt-4 min-h-32">
+                        <h2 class="line-clamp-2 min-h-12 font-montagu-slab text-secondary text-xl leading-tight">
+                          {country.name.official}
+                        </h2>
+                        <p class="mt-1 line-clamp-1 min-h-5 text-base-content/50 text-sm">
+                          {country.name.common && country.name.common !== country.name.official
+                            ? country.name.common
+                            : ''}
+                        </p>
                         <p class="mt-3 text-base-content/45 text-xs uppercase tracking-[0.25em]">Capital</p>
-                        <p class="mt-1 font-space-grotesk text-2xl text-base-content leading-none">
+                        <p class="mt-1 line-clamp-2 font-space-grotesk text-2xl text-base-content leading-tight">
                           {countryCapitals(country)[0] ?? ''}
                         </p>
                       </div>
@@ -229,32 +233,24 @@ export const CountryContainer: Component = () => {
                           </dd>
                           <dd class="mt-2 text-base-content/55 text-sm">{countryRegionLabel(country)}</dd>
                         </div>
-                        <Show when={country.area}>
-                          <div class="bg-base-100 p-3">
-                            <dt class="text-[10px] text-base-content/45 uppercase tracking-[0.25em]">Density</dt>
-                            <dd class="mt-1 text-base-content tabular-nums">{populationDensity(country)}</dd>
-                          </div>
-                        </Show>
-                        <Show when={firstValue(country.languages)}>
-                          {(language) => (
-                            <div class="bg-base-100 p-3">
-                              <dt class="text-[10px] text-base-content/45 uppercase tracking-[0.25em]">Language</dt>
-                              <dd class="mt-1 truncate text-base-content">{language()}</dd>
-                            </div>
-                          )}
-                        </Show>
-                        <Show when={country.area}>
-                          <div class="col-span-2 bg-base-100 p-3">
-                            <dt class="text-[10px] text-base-content/45 uppercase tracking-[0.25em]">Area</dt>
-                            <dd class="mt-1 truncate text-base-content tabular-nums">
-                              {country.area?.toLocaleString()} km²
-                            </dd>
-                          </div>
-                        </Show>
+                        <div class="bg-base-100 p-3">
+                          <dt class="text-[10px] text-base-content/45 uppercase tracking-[0.25em]">Density</dt>
+                          <dd class="mt-1 text-base-content tabular-nums">{populationDensity(country)}</dd>
+                        </div>
+                        <div class="bg-base-100 p-3">
+                          <dt class="text-[10px] text-base-content/45 uppercase tracking-[0.25em]">Language</dt>
+                          <dd class="mt-1 truncate text-base-content">{firstValue(country.languages) ?? 'N/A'}</dd>
+                        </div>
+                        <div class="col-span-2 bg-base-100 p-3">
+                          <dt class="text-[10px] text-base-content/45 uppercase tracking-[0.25em]">Area</dt>
+                          <dd class="mt-1 truncate text-base-content tabular-nums">
+                            {country.area ? `${country.area.toLocaleString()} km²` : 'N/A'}
+                          </dd>
+                        </div>
                       </dl>
                     </div>
 
-                    <div class="mt-6 flex items-center justify-between gap-3">
+                    <div class="mt-5 flex shrink-0 items-center justify-between gap-3">
                       <a
                         href={countryMapUrl(country)}
                         target="_blank"

@@ -94,3 +94,47 @@ body {
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+.hero-float {
+	animation: hero-float 7s ease-in-out infinite;
+}
+
+.hero-scanline {
+	background-image: linear-gradient(90deg, transparent, rgb(233 78 109 / 0.28), transparent);
+	animation: hero-scanline 4.5s ease-in-out infinite;
+}
+
+@keyframes hero-float {
+	0%,
+	100% {
+		transform: translate3d(0, 0, 0) rotate(12deg);
+	}
+
+	50% {
+		transform: translate3d(0.35rem, -0.65rem, 0) rotate(8deg);
+	}
+}
+
+@keyframes hero-scanline {
+	0%,
+	100% {
+		transform: translateX(-110%);
+		opacity: 0;
+	}
+
+	35%,
+	65% {
+		opacity: 1;
+	}
+
+	100% {
+		transform: translateX(110%);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.hero-float,
+	.hero-scanline {
+		animation: none;
+	}
+}

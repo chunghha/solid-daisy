@@ -2,7 +2,6 @@ import { createQuery, QueryClient, QueryClientProvider } from '@tanstack/solid-q
 import { SolidQueryDevtools } from '@tanstack/solid-query-devtools'
 import type { Component } from 'solid-js'
 import { For, Match, Switch } from 'solid-js'
-import { SpinningCircles } from 'solid-spinner'
 import type { Country } from '../models/country'
 import { createCountryQueryOptions } from '../services/countryService'
 
@@ -16,7 +15,7 @@ export const CountryContainer: Component = () => {
     <Switch>
       <Match when={query.isLoading}>
         <div class="flex h-[85vh] items-center justify-center">
-          <SpinningCircles color="teal" />
+          <span class="loading loading-spinner loading-lg text-teal-600" data-test-name="spinning-circles" />
         </div>
       </Match>
       <Match when={query.isError}>

@@ -1,5 +1,12 @@
+import path from 'node:path'
 import solid from 'vite-plugin-solid'
 import { defineConfig } from 'vitest/config'
+
+const solidAliases = {
+  '@solidjs/testing-library': path.resolve(import.meta.dirname, 'tests/lib/solid-testing-library.ts'),
+  'solid-js/web': '@solidjs/web',
+  'solid-js/store': 'solid-js',
+}
 
 export default defineConfig({
   test: {
@@ -18,12 +25,13 @@ export default defineConfig({
     },
     server: {
       deps: {
-        inline: [/solid-js/],
+        inline: [/solid-js/, /@solidjs\/web/],
       },
     },
   },
   plugins: [solid()],
   resolve: {
+    alias: solidAliases,
     conditions: ['development', 'browser'],
   },
 })

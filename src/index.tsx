@@ -5,8 +5,8 @@ import '@fontsource/montagu-slab'
 
 import './index.css'
 
+import { render } from '@solidjs/web'
 import { createRouter, RouterProvider } from '@tanstack/solid-router'
-import { render } from 'solid-js/web'
 
 // Import the generated route tree
 import { routeTree } from './routeTree.gen'

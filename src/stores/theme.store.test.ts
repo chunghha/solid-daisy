@@ -1,10 +1,14 @@
+import { flush } from 'solid-js'
 import { beforeEach, describe, expect, it } from 'vitest'
 import { setTheme, theme, toggleTheme } from './theme.store'
 
 describe('theme store', () => {
   beforeEach(() => {
     // Deterministic baseline (light)
-    setTheme('isDark', false)
+    setTheme((s) => {
+      s.isDark = false
+    })
+    flush()
   })
 
   it('shouldDefaultToLightTheme', () => {
@@ -14,8 +18,10 @@ describe('theme store', () => {
   it('shouldToggleTheme', () => {
     expect(theme.isDark).toBe(false)
     toggleTheme()
+    flush()
     expect(theme.isDark).toBe(true)
     toggleTheme()
+    flush()
     expect(theme.isDark).toBe(false)
   })
 })

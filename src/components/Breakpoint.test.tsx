@@ -2,15 +2,21 @@ import { render, screen } from '@solidjs/testing-library'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import Breakpoint from './Breakpoint'
 
-/**
- * We mock createBreakpoints so we can deterministically drive the reactive
- * state without relying on real matchMedia queries.
- */
-let mockMatches = { sm: true, lg: false, xl: false }
+const mediaMatches: Record<string, boolean> = {
+  '(min-width: 640px)': true,
+  '(min-width: 1024px)': false,
+  '(min-width: 1280px)': false,
+}
 
-vi.mock('@solid-primitives/media', () => ({
-  createBreakpoints: () => mockMatches,
-}))
+vi.stubGlobal(
+  'matchMedia',
+  vi.fn((query: string) => ({
+    matches: mediaMatches[query] ?? false,
+    media: query,
+    addEventListener: vi.fn(),
+    removeEventListener: vi.fn(),
+  })),
+)
 
 function activeButtons() {
   return screen.getAllByRole('button').filter((b) => b.classList.contains('btn-secondary'))
@@ -18,8 +24,9 @@ function activeButtons() {
 
 describe('Breakpoint component', () => {
   beforeEach(() => {
-    // Default baseline (small only)
-    mockMatches = { sm: true, lg: false, xl: false }
+    mediaMatches['(min-width: 640px)'] = true
+    mediaMatches['(min-width: 1024px)'] = false
+    mediaMatches['(min-width: 1280px)'] = false
   })
 
   it('shouldRenderThreeButtons', () => {
@@ -32,7 +39,9 @@ describe('Breakpoint component', () => {
   })
 
   it('shouldHighlightSmOnlyForSmallBreakpoint', () => {
-    mockMatches = { sm: true, lg: false, xl: false }
+    mediaMatches['(min-width: 640px)'] = true
+    mediaMatches['(min-width: 1024px)'] = false
+    mediaMatches['(min-width: 1280px)'] = false
     render(() => <Breakpoint />)
     const buttons = activeButtons()
     expect(buttons).toHaveLength(1)
@@ -40,7 +49,9 @@ describe('Breakpoint component', () => {
   })
 
   it('shouldHighlightLgOnlyForLargeBreakpoint', () => {
-    mockMatches = { sm: true, lg: true, xl: false }
+    mediaMatches['(min-width: 640px)'] = true
+    mediaMatches['(min-width: 1024px)'] = true
+    mediaMatches['(min-width: 1280px)'] = false
     render(() => <Breakpoint />)
     const buttons = activeButtons()
     expect(buttons).toHaveLength(1)
@@ -48,7 +59,9 @@ describe('Breakpoint component', () => {
   })
 
   it('shouldHighlightXlOnlyForXlBreakpoint', () => {
-    mockMatches = { sm: true, lg: true, xl: true }
+    mediaMatches['(min-width: 640px)'] = true
+    mediaMatches['(min-width: 1024px)'] = true
+    mediaMatches['(min-width: 1280px)'] = true
     render(() => <Breakpoint />)
     const buttons = activeButtons()
     expect(buttons).toHaveLength(1)

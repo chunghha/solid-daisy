@@ -1,4 +1,5 @@
 import { render } from '@solidjs/testing-library'
+import { flush } from 'solid-js'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
 /**
@@ -90,6 +91,7 @@ describe('Watch component', () => {
 
     // Advance interval (1 second) -> triggers second DateTime.now()
     vi.advanceTimersByTime(1000)
+    flush()
 
     // Re-query after reactive update
     ;[hourSpan, minuteSpan] = getHourAndMinuteSpans(container)
@@ -101,8 +103,10 @@ describe('Watch component', () => {
     const { container } = render(() => <Watch />)
 
     // First tick already consumed first value (05:07)
-    vi.advanceTimersByTime(1000) // second value (05:08)
+    vi.advanceTimersByTime(1000)
+    flush() // second value (05:08)
     vi.advanceTimersByTime(5000) // further ticks reuse last value (05:08)
+    flush()
 
     const [, minuteSpan] = getHourAndMinuteSpans(container)
     expect(minuteSpan.getAttribute('style')).toContain('08')

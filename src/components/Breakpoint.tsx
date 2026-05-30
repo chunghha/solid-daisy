@@ -1,35 +1,25 @@
-import { createBreakpoints } from '@solid-primitives/media'
 import type { Component } from 'solid-js'
-import { createEffect, createSignal } from 'solid-js'
-
-const breakpoints = {
-  sm: '640px',
-  lg: '1024px',
-  xl: '1280px',
-}
+import { createMemo } from 'solid-js'
+import { createMediaQuery } from '../lib/media-query'
 
 const Breakpoint: Component = () => {
-  const matches = createBreakpoints(breakpoints)
+  const sm = createMediaQuery('(min-width: 640px)')
+  const lg = createMediaQuery('(min-width: 1024px)')
+  const xl = createMediaQuery('(min-width: 1280px)')
 
-  const [sm, setSm] = createSignal(matches.sm && !matches.lg && !matches.xl)
-  const [lg, setLg] = createSignal(matches.sm && !matches.lg && !matches.xl)
-  const [xl, setXl] = createSignal(matches.sm && !matches.lg && !matches.xl)
-
-  createEffect(() => {
-    setSm(matches.sm && !matches.lg && !matches.xl)
-    setLg(matches.sm && matches.lg && !matches.xl)
-    setXl(matches.sm && matches.lg && matches.xl)
-  })
+  const smActive = createMemo(() => sm() && !lg() && !xl())
+  const lgActive = createMemo(() => sm() && lg() && !xl())
+  const xlActive = createMemo(() => sm() && lg() && xl())
 
   return (
     <div class="btn-group flex justify-center p-8">
-      <button type="button" classList={{ btn: true, 'btn-secondary': sm() }}>
+      <button type="button" class={['btn', { 'btn-secondary': smActive() }]}>
         sm
       </button>
-      <button type="button" classList={{ btn: true, 'btn-secondary': lg() }}>
+      <button type="button" class={['btn', { 'btn-secondary': lgActive() }]}>
         lg
       </button>
-      <button type="button" classList={{ btn: true, 'btn-secondary': xl() }}>
+      <button type="button" class={['btn', { 'btn-secondary': xlActive() }]}>
         xl
       </button>
     </div>

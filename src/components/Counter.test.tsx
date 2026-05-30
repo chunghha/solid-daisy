@@ -1,11 +1,14 @@
-import { fireEvent, render, screen } from '@solidjs/testing-library'
+import { render, screen } from '@solidjs/testing-library'
+import { flush } from 'solid-js'
 import { beforeEach, describe, expect, it } from 'vitest'
+import { click } from '../../tests/utils/solid-test'
 import { resetCounter } from '../stores/counter.store'
 import Counter from './Counter'
 
 describe('Counter component', () => {
   beforeEach(() => {
     resetCounter()
+    flush()
   })
 
   it('shouldRenderInitialCount', () => {
@@ -17,14 +20,14 @@ describe('Counter component', () => {
   it('shouldIncreaseCounterOnPlusClick', async () => {
     render(() => <Counter />)
     const incrementBtn = screen.getByRole('button', { name: '+' })
-    fireEvent.click(incrementBtn)
+    click(incrementBtn)
     expect(screen.getByText(/Counter:\s*1/)).toBeTruthy()
   })
 
   it('shouldDecreaseCounterOnMinusClick', async () => {
     render(() => <Counter />)
     const decrementBtn = screen.getByRole('button', { name: '-' })
-    fireEvent.click(decrementBtn)
+    click(decrementBtn)
     expect(screen.getByText(/Counter:\s*-1/)).toBeTruthy()
   })
 
@@ -33,12 +36,12 @@ describe('Counter component', () => {
     const incrementBtn = screen.getByRole('button', { name: '+' })
     const decrementBtn = screen.getByRole('button', { name: '-' })
 
-    fireEvent.click(incrementBtn)
-    fireEvent.click(incrementBtn)
+    click(incrementBtn)
+    click(incrementBtn)
     expect(screen.getByText(/Counter:\s*2/)).toBeTruthy()
 
-    fireEvent.click(decrementBtn)
-    fireEvent.click(decrementBtn)
+    click(decrementBtn)
+    click(decrementBtn)
     expect(screen.getByText(/Counter:\s*0/)).toBeTruthy()
   })
 })

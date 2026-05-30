@@ -23,25 +23,25 @@
     "check:all": "pnpm check && pnpm test:cov"
   },
   "dependencies": {
-    "@solid-primitives/media": "^2.3.5",
     "@tanstack/router-plugin": "^1.168.11",
-    "@tanstack/solid-query": "^5.100.14",
-    "@tanstack/solid-query-devtools": "^5.100.14",
-    "@tanstack/solid-router": "^1.170.8",
-    "@tanstack/solid-router-devtools": "^1.167.0",
+    "@tanstack/solid-query": "6.0.0-beta.4",
+    "@tanstack/solid-query-devtools": "6.0.0-beta.4",
+    "@tanstack/solid-router": "2.0.0-beta.18",
+    "@tanstack/solid-router-devtools": "2.0.0-beta.14",
     "@tanstack/zod-adapter": "^1.167.0",
     "luxon": "^3.7.2",
     "solid-forms": "^0.5.2",
-    "solid-js": "^1.9.13",
-    "solid-spinner": "^0.2.0",
+    "@solidjs/web": "2.0.0-beta.14",
+    "solid-js": "2.0.0-beta.14",
     "zod": "^4.4.3"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.4.15",
+    "@biomejs/biome": "^2.4.16",
     "@fontsource/fira-mono": "^5.2.7",
     "@fontsource/montagu-slab": "^5.2.10",
     "@fontsource/space-grotesk": "^5.2.10",
     "@solidjs/testing-library": "^0.8.10",
+    "@testing-library/dom": "^10.4.1",
     "@tailwindcss/forms": "^0.5.11",
     "@tailwindcss/postcss": "^4.3.0",
     "@tailwindcss/typography": "^0.5.19",
@@ -58,7 +58,7 @@
     "tailwindcss": "^4.3.0",
     "typescript": "~6.0.3",
     "vite": "~8.0.14",
-    "vite-plugin-solid": "^2.11.12",
+    "vite-plugin-solid": "3.0.0-next.5",
     "vitest": "^4.1.7"
   }
 }

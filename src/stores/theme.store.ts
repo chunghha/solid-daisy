@@ -1,7 +1,9 @@
-import { createStore } from 'solid-js/store'
+import { createStore } from 'solid-js'
 
 export const [theme, setTheme] = createStore({ isDark: false })
 
 export function toggleTheme() {
-  setTheme('isDark', (isDark) => !isDark)
+  setTheme((s) => {
+    s.isDark = !s.isDark
+  })
 }

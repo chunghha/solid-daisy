@@ -1,4 +1,5 @@
 import { fireEvent, render, screen } from '@solidjs/testing-library'
+import { flush } from 'solid-js'
 import { beforeEach, describe, expect, it } from 'vitest'
 import { setTheme, theme } from '../../stores/theme.store'
 import ThemeSwitcher from './ThemeSwitcher'
@@ -14,7 +15,10 @@ import ThemeSwitcher from './ThemeSwitcher'
 describe('ThemeSwitcher component', () => {
   beforeEach(() => {
     // Deterministic baseline (light mode)
-    setTheme('isDark', false)
+    setTheme((s) => {
+      s.isDark = false
+    })
+    flush()
   })
 
   it('shouldRenderAButton', () => {
@@ -30,9 +34,11 @@ describe('ThemeSwitcher component', () => {
 
     const btn = screen.getByRole('button', { name: /toggle theme/i })
     fireEvent.click(btn)
+    flush()
     expect(theme.isDark).toBe(true)
 
     fireEvent.click(btn)
+    flush()
     expect(theme.isDark).toBe(false)
   })
 

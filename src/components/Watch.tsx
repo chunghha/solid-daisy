@@ -1,12 +1,14 @@
 import { DateTime } from 'luxon'
 import type { Component } from 'solid-js'
-import { createSignal, onCleanup } from 'solid-js'
+import { createSignal, onSettled } from 'solid-js'
 
 const Watch: Component = () => {
   const [watch, setWatch] = createSignal(DateTime.now())
-  const interval = setInterval(() => setWatch(() => DateTime.now()), 1000)
 
-  onCleanup(() => clearInterval(interval))
+  onSettled(() => {
+    const interval = setInterval(() => setWatch(() => DateTime.now()), 1000)
+    return () => clearInterval(interval)
+  })
 
   return (
     <div class="countdown mr-4 ml-2 font-fira-mono text-secondary text-xl">
